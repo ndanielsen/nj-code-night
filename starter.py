@@ -51,7 +51,7 @@ c = 6
 #4 what is the value of e?
 
 # STRINGS
-# https://docs.python.org/2/tutorial/introduction.html#strings
+# https://docs.python.org/3/tutorial/introduction.html#strings
 
 s = str(42)
 s  # convert another data type into a string (casting)
@@ -121,16 +121,41 @@ def doing_good_job():
 
 
 # FUNCTIONS - Part II
-# Now that have some basic tools, let's do something interesting
+# Now that have some basic tools, let's use a library to download a file
 
-#
-# https://www.nationaljournal.com/md/656032/urban-forestry-washington-d-c
+# import requests
+
 # Look at the data source:
-# http://opendata.dc.gov/datasets/urban-forestry-street-trees?
+# https://archive.ics.uci.edu/ml/datasets/iris
 
-import requests
-# https://opendata.arcgis.com/datasets/f6c3c04113944f23a7993f2e603abaf2_23.csv
+url = 'http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'
 
-# response =  requests.get('https://opendata.arcgis.com/datasets/f6c3c04113944f23a7993f2e603abaf2_23.csv')
-# with open('./Urban_Forestry_Street_Trees.csv', 'wb') as f:
-#     f.write(response.content)
+file_name = 'iris.data'
+
+def download_file(url, filename):
+    """Downloads a file from a url onto your computer"""
+    response =  requests.get(url)
+    with open(filename, 'wb') as f:
+        f.write(response.content)
+
+
+# EXERCISE:
+# 1. How are url and filename used in the function above?
+# 2. How can you use the function above to download a file?
+
+
+################################################################################
+# HOME WORK
+################################################################################
+
+# 1. Can you figure out how to open this CSV file?
+# 2. How many rows of data are in this CSV?
+
+# HINTS:
+# Look at this example in the python documentation.
+# https://docs.python.org/3/library/csv.html#module-contents
+#
+# What is a 'for' loop in python?
+# https://wiki.python.org/moin/ForLoop
+#
+# How can you count using the 'for' loop?
